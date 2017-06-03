@@ -228,8 +228,8 @@ Button宽度不是一个事件。
                         float fraction = animation.getAnimatedFraction();
                         //直接调用整型估值器，通过比例计算出高度，然后再设给button
                         btnChange.getLayoutParams().height = mEvaluator.evaluate(fraction,btnChange.getHeight(),500);//原理见源码
-                       btnChange.requestLayout();
-                    }
+                       btnChange.requestLayout();// 异步刷新view
+                    }
                 });
 
                 valueAnimator.start();
